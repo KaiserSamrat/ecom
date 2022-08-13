@@ -12,6 +12,8 @@ import Medicine from "./components/medicine/Medicine"
 import Mdata from "./components/medicine/Mdata"
 import Grocerydata from "./components/groceries/Grocerydata"
 import Grocery from "./components/groceries/Grocery"
+import StationayData from "./components/stationaries/StationayData"
+import Stationary from "./components/stationaries/Stationary"
 
 function App() {
   /*
@@ -31,6 +33,7 @@ function App() {
   const { shopItems } = Sdata
   const { medicineItems } = Mdata
   const { groceryItems } = Grocerydata
+  const { StationayItems } = StationayData
 
   //Step 2 :
   const [CartItem, setCartItem] = useState([])
@@ -93,6 +96,9 @@ function App() {
           </Route>
           <Route path='/grocery'   exact>
             <Grocery addToCart={addToCart} groceryItems={groceryItems}/>
+          </Route>
+          <Route path='/stationary'   exact>
+            <Stationary addToCart={addToCart} StationayItems={StationayItems}/>
           </Route>
         </Switch>
         <Footer />

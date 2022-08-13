@@ -66,6 +66,9 @@ const Categories = () => {
   const handleCategories = () => {
     history.push("./grocery")
   }
+  const handleStationary = () => {
+    history.push("./stationary")
+  }
 
   return (
     <>
@@ -84,14 +87,11 @@ const Categories = () => {
               <img src={data[2].cateImg} alt='' />
               <span>Medicine</span>
             </div>
-            <div className='box f_flex' >
+            <div className='box f_flex' onClick={handleStationary}>
               <img src={data[3].cateImg} alt='' />
               <span>Stationeries</span>
             </div>
-            <div className='box f_flex' >
-              <img src={data[4].cateImg} alt='' />
-              <span>Books</span>
-            </div>
+          
          
         {/* })} */}
       </div>
