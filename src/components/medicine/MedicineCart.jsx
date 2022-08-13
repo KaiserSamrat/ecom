@@ -1,6 +1,6 @@
 //import React, { useState } from "react"
 
-//const ShopCart = ({ addToCart, shopItems }) => {
+//const MedicineCart = ({ addToCart, shopItems }) => {
 //  const [count, setCount] = useState(0)
 //  const increment = () => {
 //    setCount(count + 1)
@@ -42,11 +42,11 @@
 //  )
 //}
 
-//export default ShopCart
+//export default MedicineCart
 
 import React, { useState } from "react"
 
-const ShopCart = ({ shopItems, addToCart }) => {
+const MedicineCart = ({ medicineItems, addToCart }) => {
   const [count, setCount] = useState(0)
   const increment = () => {
     setCount(count + 1)
@@ -54,20 +54,20 @@ const ShopCart = ({ shopItems, addToCart }) => {
 
   return (
     <>
-      {shopItems.map((shopItems, index) => {
+      {medicineItems.map((medicineItems, index) => {
         return (
           <div className='box'>
             <div className='product mtop'>
               <div className='img'>
-                <span className='discount'>{shopItems.discount}% Off</span>
-                <img src={shopItems.cover} alt='' />
+                <span className='discount'>{medicineItems.discount}% Off</span>
+                <img src={medicineItems.cover} alt='' />
                 <div className='product-like'>
                   <label>{count}</label> <br />
                   <i className='fa-regular fa-heart' onClick={increment}></i>
                 </div>
               </div>
               <div className='product-details'>
-                <h3>{shopItems.name}</h3>
+                <h3>{medicineItems.name}</h3>
                 <div className='rate'>
                   <i className='fa fa-star'></i>
                   <i className='fa fa-star'></i>
@@ -76,11 +76,11 @@ const ShopCart = ({ shopItems, addToCart }) => {
                   <i className='fa fa-star'></i>
                 </div>
                 <div className='price'>
-                  <h4>{shopItems.price}.00 Tk</h4>
+                  <h4>{medicineItems.price}.00 Tk</h4>
                   {/* step : 3  
                      if hami le button ma click garryo bahne 
                     */}
-                  <button onClick={() => addToCart(shopItems)}>
+                  <button onClick={() => addToCart(medicineItems)}>
                     <i className='fa fa-plus'></i>
                   </button>
                 </div>
@@ -93,4 +93,4 @@ const ShopCart = ({ shopItems, addToCart }) => {
   )
 }
 
-export default ShopCart
+export default MedicineCart

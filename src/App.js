@@ -7,6 +7,11 @@ import Data from "./components/Data"
 import Cart from "./common/Cart/Cart"
 import Footer from "./common/footer/Footer"
 import Sdata from "./components/shops/Sdata"
+import Shop from "./components/shops/Shop"
+import Medicine from "./components/medicine/Medicine"
+import Mdata from "./components/medicine/Mdata"
+import Grocerydata from "./components/groceries/Grocerydata"
+import Grocery from "./components/groceries/Grocery"
 
 function App() {
   /*
@@ -24,6 +29,8 @@ function App() {
   //Step 1 :
   const { productItems } = Data
   const { shopItems } = Sdata
+  const { medicineItems } = Mdata
+  const { groceryItems } = Grocerydata
 
   //Step 2 :
   const [CartItem, setCartItem] = useState([])
@@ -77,6 +84,15 @@ function App() {
           </Route>
           <Route path='/cart' exact>
             <Cart CartItem={CartItem} addToCart={addToCart} decreaseQty={decreaseQty} />
+          </Route>
+          <Route path='/electronics'   exact>
+            <Shop addToCart={addToCart} shopItems={shopItems}/>
+          </Route>
+          <Route path='/medicine'   exact>
+            <Medicine addToCart={addToCart} medicineItems={medicineItems}/>
+          </Route>
+          <Route path='/grocery'   exact>
+            <Grocery addToCart={addToCart} groceryItems={groceryItems}/>
           </Route>
         </Switch>
         <Footer />
