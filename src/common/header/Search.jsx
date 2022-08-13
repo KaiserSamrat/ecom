@@ -1,21 +1,24 @@
 import React from "react"
 import logo from "../../components/assets/images/logo.svg"
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 
 const Search = ({ CartItem }) => {
+  const history = useHistory()
   // fixed Header
   window.addEventListener("scroll", function () {
     const search = document.querySelector(".search")
     search.classList.toggle("active", window.scrollY > 100)
   })
-
+const handleTilte = () => {
+  history.push('/')
+}
   return (
     <>
       <section className='search'>
         <div className='container c_flex'>
           <div className='logo width '>
             {/* <img src={logo} alt='' /> */}
-            <h1 className="text-danger">সন্ধান</h1>
+            <h1 className="text-danger" onClick={handleTilte}>সন্ধান</h1>
           </div>
 
           <div className='search-box f_flex'>
